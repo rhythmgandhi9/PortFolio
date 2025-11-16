@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rhythm Gandhi — Portfolio</title>
+  <meta name="description" content="Rhythm Gandhi — B.Tech CSE. ML research, data engineering and embedded systems.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#081018;
+      --panel: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.06);
+      --muted:#9aa6b8;
+      --accent:#58d4e0;
+      --accent-2:#6ea8ff;
+      --glass-blur:14px;
+      --radius:16px;
+      --glass-shadow: 0 12px 50px rgba(2,6,23,0.6);
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(89,208,255,0.04), transparent 10%),
+        radial-gradient(700px 320px at 90% 90%, rgba(110,168,255,0.03), transparent 8%),
+        var(--bg);
+      color:#e8eef7;
+      line-height:1.5;
+      scroll-behavior:smooth;
+      animation:bgFloat 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgFloat{
+      0%{ background-position:0 0,0 0; }
+      100%{ background-position:25px 40px,-25px -40px; }
+    }
+
+    .wrap{max-width:var(--maxw);margin:44px auto;padding:28px;}
+
+    /* COVER LAYOUT */
+    header.cover{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:32px;
+    }
+    @media(max-width:980px){
+      header.cover{grid-template-columns:1fr;}
+    }
+
+    /* PROFILE IMAGE */
+    .profile-img{
+       width:320px;
+      object-fit:cover;
+      box-shadow:0 12px 40px rgba(0,0,0,0.55);
+    }
+   
+
+
+    /* Panels */
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      backdrop-filter:blur(var(--glass-blur));
+      box-shadow:var(--glass-shadow);
+      transition:.35s ease-in-out;
+    }
+    .panel:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 60px rgba(2,6,23,0.85);
+    }
+
+    .intro-left{padding-right:12px}
+    .name{font-size:34px;font-weight:800;margin:0 0 6px}
+    .sub{color:var(--muted)}
+    .meta{color:var(--muted);font-size:14px}
+
+    /* Tag animation */
+    .tag{
+      display:inline-block;margin-top:12px;padding:10px 14px;border-radius:12px;
+      background:linear-gradient(90deg,rgba(88,212,224,0.1),rgba(110,168,255,0.06));
+      color:var(--accent);font-weight:700;border:1px solid rgba(255,255,255,0.04);
+      animation:pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.05);}
+      100%{transform:scale(1);}
+    }
+
+    .toc{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+    .toc a{
+      color:var(--muted);padding:8px 12px;border-radius:10px;text-decoration:none;
+      border:1px solid transparent;transition:.3s;
+    }
+    .toc a:hover{
+      color:#fff;border-color:rgba(255,255,255,0.06);transform:translateY(-3px)
+    }
+
+    .buttons{display:flex;gap:12px;margin-top:14px}
+    .btn{
+      padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.1);
+      background:transparent;color:var(--accent);
+      font-weight:700;text-decoration:none;
+      display:inline-flex;gap:10px;align-items:center;
+      transition:.3s;
+    }
+    .btn:hover{
+      transform:translateY(-4px);
+      background:rgba(88,212,224,0.08);
+      box-shadow:0 0 12px rgba(88,212,224,0.3);
+    }
+
+    /* Reveal animation */
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:all .8s cubic-bezier(.2,.9,.2,1);
+    }
+    .reveal.active{
+      opacity:1;
+      transform:none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- COVER -->
+    <header class="cover">
+
+      <!-- LEFT SIDE INTRO -->
+      <div class="panel intro-left reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div>
+            <h1 class="name">Rhythm Gandhi</h1>
+            <div class="sub">Bachelor of Technology — Computer Science &amp; Engineering</div>
+            <div class="meta">Pandit Deendayal Energy University • Gandhinagar</div>
+            <div class="meta">CGPA: <strong>9.3 / 10.0</strong></div>
+            <div class="tag">Explainable AI · Intelligent Systems · Data Engineering</div>
+          </div>
+        </div>
+
+        <nav class="toc" aria-label="Table of contents" style="margin-top:18px">
+          <a href="#introduction">Introduction</a>
+          <a href="#resume">Resume</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Advanced Skills</a>
+          <a href="#leadership">Leadership</a>
+          <a href="#ethics">Ethics</a>
+          <a href="#future">Future</a>
+          <a href="#conclusion">Conclusion</a>
+          <a href="#testimonial">Testimonial</a>
+        </nav>
+
+        <div class="buttons">
+          <a class="btn" href="#projects">Explore Projects</a>
+
+          <!-- UPDATED DOWNLOAD BUTTON -->
+          <a class="btn" href="C:\Users\Rhythm\Desktop\prof\Rhythm Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE PROFILE IMAGE -->
+      <aside class="summary reveal">
+        <img src="C:\Users\Rhythm\Desktop\prof\jj.jpg" alt="Profile Photo" class="profile-img">
+      </aside>
+
+    </header>
+
+    <!-- ALL OTHER CONTENT REMAINS EXACTLY THE SAME -->
+    <!-- INTRODUCTION -->
+    <main>
+
+      <section id="introduction" class="panel reveal">
+        <div class="section-title"><h2>Introduction & Learning Philosophy</h2></div>
+        <p>I am Rhythm Gandhi, a B.Tech Computer Science student focused on building robust,
+          explainable, and ethically-informed machine learning systems. My learning path is pragmatic — I prioritize hands-on prototyping,
+          reproducible experiments, and deploying solutions that are measurable and maintainable.</p>
+
+        <p>I view learning as an iterative loop: theory → experiment → evaluation → deployment → reflection.
+          This process underlies my projects across ML, embedded systems, and data engineering.</p>
+      </section>
+
+      <!-- RESUME -->
+      <section id="resume" class="panel reveal">
+        <div class="section-title"><h2>Resume</h2></div>
+
+        <div class="resume-grid">
+          <div>
+            <h3>Education</h3>
+            <p><strong>Pandit Deendayal Energy University</strong><br>
+              B.Tech — Computer Science &amp; Engineering (2023 – 2027) • CGPA: 9.3/10</p>
+
+            <h3>Experience</h3>
+            <p><strong>ML Research — Fetal Health Prediction</strong> (Nov 2024 – Present) — Remote</p>
+            <ul class="clean">
+              <li>Engineered an end-to-end ML pipeline using Scikit-learn, NumPy and Matplotlib.</li>
+              <li>Implemented a Random Forest classifier achieving <strong>95.37%</strong> accuracy.</li>
+              <li>Conducted feature engineering, cross-validation and explainability strategies.</li>
+            </ul>
+
+            <h3 style="margin-top:12px">Selected Projects</h3>
+
+            <div class="projects-grid" style="margin-top:8px">
+
+              <article class="proj">
+                <h4>Fetal Health Prediction</h4>
+                <p class="meta">Python, Scikit-learn, SHAP — ML Research</p>
+                <p>Objective: Classify fetal health and provide interpretable insights.</p>
+                <div class="code-snippet">clf = RandomForestClassifier(n_estimators=200)</div>
+              </article>
+
+              <article class="proj">
+                <h4>Gym Management System</h4>
+                <p class="meta">SQL, PostgreSQL — DBMS</p>
+                <p>Designed normalized schema to manage >9,000 records.</p>
+              </article>
+
+              <article class="proj">
+                <h4>Warehouse Temp-Humidity Monitor</h4>
+                <p class="meta">Arduino Uno, DHT11 — Embedded Systems</p>
+                <p>Real-time monitoring solution with alerts and logging.</p>
+              </article>
+
+            </div>
+
+            <h3 style="margin-top:12px">Volunteer & Co-curricular</h3>
+            <p><strong>Anirveda — PR Head</strong> (July 2023 – Present)</p>
+          </div>
+
+          <aside>
+            <div class="panel card">
+              <strong>Contact</strong>
+              <div class="meta" style="margin-top:8px">Email:
+                <a href="mailto:gandhirhythm.99@gmail.com" style="color:var(--accent)">
+                  gandhirhythm.99@gmail.com
+                </a>
+              </div>
+              <div class="meta" style="margin-top:8px">LinkedIn:
+                <a href="https://www.linkedin.com/in/rhythm-gandhi-99g/" target="_blank" style="color:var(--accent)">
+                  rhythm-gandhi-99g
+                </a>
+              </div>
+              <div class="meta" style="margin-top:8px">GitHub:
+                <a href="https://github.com/rhythmgandhi9" target="_blank" style="color:var(--accent)">
+                  rhythmgandhi9
+                </a>
+              </div>
+            </div>
+
+            <div class="panel card" style="margin-top:12px">
+              <strong>Skills</strong>
+              <ul class="clean" style="margin-top:8px">
+                <li>Python, JavaScript/TypeScript, C/C++</li>
+                <li>TensorFlow, PyTorch, Scikit-learn</li>
+                <li>GCP, BigQuery, PostgreSQL, MongoDB, Docker</li>
+                <li>Arduino & sensor systems</li>
+              </ul>
+            </div>
+
+            <div class="panel card" style="margin-top:12px">
+              <strong>Achievements</strong>
+              <div class="meta" style="margin-top:8px">Invited to ACM Annual Summit.</div>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="panel reveal">
+        <div class="section-title"><h2>Interdisciplinary Projects & Research</h2></div>
+
+        <div style="display:grid;gap:12px">
+
+          <article class="proj">
+            <h4>Fetal Health Prediction — Applied ML Research</h4>
+            <p class="meta">Nov 2024 – Present</p>
+            <p><strong>Overview:</strong> Built a trustworthy ML classifier for clinicians.</p>
+            <p><strong>Methods:</strong> Feature engineering, SHAP explainability, calibration.</p>
+            <p><strong>Outcome:</strong> 95.37% accuracy with reliable probability estimates.</p>
+          </article>
+
+          <article class="proj">
+            <h4>Gym Management System — Data Systems</h4>
+            <p class="meta">Mar 2025</p>
+            <p>Normalized schema, indexing and reporting automation.</p>
+          </article>
+
+          <article class="proj">
+            <h4>Warehouse Temp-Humidity Monitor — Embedded Systems</h4>
+            <p class="meta">Sept 2024</p>
+            <p>Arduino-based environmental telemetry logging.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="panel reveal">
+        <div class="section-title"><h2>Advanced Skill Development & Mastery</h2></div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+          <div class="panel card">
+            <strong>Explainable ML</strong>
+            <p class="meta" style="margin-top:8px">SHAP feature analysis implementation.</p>
+          </div>
+          <div class="panel card">
+            <strong>Data Engineering & Cloud</strong>
+            <p class="meta" style="margin-top:8px">ETL with BigQuery, optimized warehousing.</p>
+          </div>
+          <div class="panel card">
+            <strong>Embedded Systems</strong>
+            <p class="meta" style="margin-top:8px">Robust Arduino loops & sensor logic.</p>
+          </div>
+          <div class="panel card">
+            <strong>Leadership & Communication</strong>
+            <p class="meta" style="margin-top:8px">PR Head, event coordination, campaigns.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP -->
+      <section id="leadership" class="panel reveal">
+        <div class="section-title"><h2>Collaborative & Leadership Experiences</h2></div>
+        <p><strong>Anirveda — PR Head</strong> (July 2023 – Present): Managed campaigns, improved engagement by ~10%.</p>
+      </section>
+
+      <!-- ETHICS -->
+      <section id="ethics" class="panel reveal">
+        <div class="section-title"><h2>Global Awareness & Ethical Considerations</h2></div>
+        <p>Applied de-identification, fairness checks and human oversight in ML workflows.</p>
+      </section>
+
+      <!-- FUTURE -->
+      <section id="future" class="panel reveal">
+        <div class="section-title"><h2>Future Aspirations & Professional Development</h2></div>
+        <ul class="clean">
+          <li>Advance explainable AI research.</li>
+          <li>Lead interdisciplinary engineering teams.</li>
+          <li>Develop safe ML tools for global deployment.</li>
+        </ul>
+      </section>
+
+      <!-- CONCLUSION -->
+      <section id="conclusion" class="panel reveal">
+        <div class="section-title"><h2>Conclusion & Self-Assessment</h2></div>
+        <p>Strong academic results, ML research achievements, engineering projects and leadership contribute to a strong foundation.</p>
+
+        <h4>SWOT</h4>
+        <ul class="clean">
+          <li><strong>Strengths:</strong> ML + systems engineering breadth.</li>
+          <li><strong>Weaknesses:</strong> Limited large-scale deployment experience.</li>
+          <li><strong>Opportunities:</strong> Growing demand for explainability.</li>
+          <li><strong>Threats:</strong> Fast-evolving AI landscape.</li>
+        </ul>
+      </section>
+
+      <!-- TESTIMONIAL -->
+      <section id="testimonial" class="panel reveal">
+        <div class="section-title"><h2 id="testTitle">Testimonial</h2></div>
+        <blockquote style="margin:0;padding-left:14px;border-left:3px solid rgba(88,212,224,0.08);color:var(--muted)">
+          "Rhythm demonstrates clarity of thought, technical rigor, and strong research discipline. A dependable collaborator."
+        </blockquote>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="max-width:var(--maxw);margin:14px auto 48px;color:var(--muted);font-size:14px;text-align:center">
+        © 2025 Rhythm Gandhi — Pandit Deendayal Energy University — All rights reserved
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reveal animation JS -->
+  <script>
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('active');}
+      });
+    },{threshold:0.12});
+
+    document.querySelectorAll('.reveal').forEach(el=>{
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
